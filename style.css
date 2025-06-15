@@ -174,6 +174,7 @@ li > a{
 .product{
   flex-direction: row;
   gap: 4rem;
+  padding: 0 4rem;
 }
 .product-gallery{
   flex-direction: column;
@@ -197,16 +198,18 @@ li > a{
   gap: 1rem;
 }
 .thumbnails-gallery > button{
+  position: relative;
   border: none;
   cursor: pointer;
   padding: 0;
   background: transparent;
   transition: opacity 0.3s ease;
+  
 }
 
 .thumbnails-gallery button:hover {
   /* z-index: 1; */
-  background-color: rgba(255, 255, 255, 0.5); /* off-white overlay */
+   /* off-white overlay */
 }
 
 .thumbnails-gallery > button > img{
@@ -216,6 +219,23 @@ li > a{
 .thumbnails-gallery > button > img:hover{
   border: 3px solid var(--clr-Orange);
 }
+.thumbnails-gallery > button::before{
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 1rem;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.thumbnails-gallery > button:hover::before{
+  opacity: 1;
+}
 
 
 .main-image{
@@ -224,10 +244,14 @@ li > a{
   border-radius: 1rem;
 }
 
+
 @media screen and (max-width: 375px) {
 
 }
 
 @media only screen and (min-width: 764px) and (max-width: 1024px) {
+  body{
+    padding:  0 rem;
+  }
 
 }
