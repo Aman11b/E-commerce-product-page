@@ -133,16 +133,25 @@ header{
 li > a{
   text-decoration:none;
   padding-bottom: 3rem;
-  font-weight: var(--fw-700);
+  
+  
 }
 
 .nav-div{
   align-items: center;
   gap: 2rem;
+
+  
 }
 .primary-navigation{
   list-style: none;
   gap: 1rem;
+  color: var(--clr-Grayish-blue);
+  font-weight: var(--fw-700);
+
+  cursor: pointer;
+
+  
 }
 .primary-navigation > li > a:hover{
   border-bottom:4px solid var(--clr-Orange);
@@ -150,11 +159,71 @@ li > a{
 .header-buttons{
   align-items: center;
   gap: 2rem;
+
+  cursor: pointer;
 }
 .header-buttons > img{
   aspect-ratio: 1;
   width: 45px;
 }
+.header-buttons > img:hover{
+  border: 2px solid var(--clr-Orange);
+  border-radius: 50%;
+}
+
+.product{
+  flex-direction: row;
+  gap: 4rem;
+}
+.product-gallery{
+  flex-direction: column;
+}
+.product-information{
+  flex-direction: column;
+  gap: 2rem;
+
+  /* justify-content: center; */
+}
+
+.product-gallery,
+.product-information{
+  max-width: 50%;
+}
+.product-image{
+  flex-direction: column;
+  gap: 2rem;
+}
+.thumbnails-gallery{
+  gap: 1rem;
+}
+.thumbnails-gallery > button{
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  background: transparent;
+  transition: opacity 0.3s ease;
+}
+
+.thumbnails-gallery button:hover {
+  /* z-index: 1; */
+  background-color: rgba(255, 255, 255, 0.5); /* off-white overlay */
+}
+
+.thumbnails-gallery > button > img{
+  border-radius: 1rem;
+  /* z-index: 0; */
+}
+.thumbnails-gallery > button > img:hover{
+  border: 3px solid var(--clr-Orange);
+}
+
+
+.main-image{
+  aspect-ratio: 1;
+  /* width: 420px; */
+  border-radius: 1rem;
+}
+
 @media screen and (max-width: 375px) {
 
 }
