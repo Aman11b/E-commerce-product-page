@@ -109,10 +109,52 @@ ol[role='list'] {
     --fw-700:700;
 }
 
-body{
-    font-family: var(--ff);
+/* utility classes */
+.flex{
+  display: flex;
+  
 }
 
+body{
+  font-family: var(--ff);
+  padding: 0 9rem;
+  flex-direction: column;
+  gap: 4rem;
+  
+}
+
+header{
+  padding: 2rem 0;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--clr-Grayish-blue);
+}
+
+li > a{
+  text-decoration:none;
+  padding-bottom: 3rem;
+  font-weight: var(--fw-700);
+}
+
+.nav-div{
+  align-items: center;
+  gap: 2rem;
+}
+.primary-navigation{
+  list-style: none;
+  gap: 1rem;
+}
+.primary-navigation > li > a:hover{
+  border-bottom:4px solid var(--clr-Orange);
+}
+.header-buttons{
+  align-items: center;
+  gap: 2rem;
+}
+.header-buttons > img{
+  aspect-ratio: 1;
+  width: 45px;
+}
 @media screen and (max-width: 375px) {
 
 }
