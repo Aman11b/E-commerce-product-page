@@ -161,13 +161,19 @@ li > a {
 
   cursor: pointer;
 }
-.header-buttons > img {
+
+.avatar {
   aspect-ratio: 1;
   width: 45px;
 }
 .header-buttons > img:hover {
   border: 2px solid var(--clr-Orange);
   border-radius: 50%;
+}
+.cart-dropdown{
+  position: absolute;
+  top: 10%;
+  right: 10%;
 }
 
 .product {
