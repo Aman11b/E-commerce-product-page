@@ -19,6 +19,18 @@ const totalCost = document.querySelector(".total-cost");
 
 const deleteBtn = document.querySelector(".delete-btn");
 
+const mainImage = document.querySelector(".main-image");
+const thumbnailGalleryBtn = document.querySelectorAll(
+  ".thumbnails-gallery-btn"
+);
+thumbnailGalleryBtn.forEach((button) => {
+  const thumbnail = button.querySelector("img");
+  button.addEventListener("click", () => {
+    const fullImageSrc = thumbnail.src.replace("-thumbnail", "");
+    mainImage.src = fullImageSrc;
+  });
+});
+
 let count = 0;
 let outputCount = 0;
 let unitPrice = 125;
