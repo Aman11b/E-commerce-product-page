@@ -17,6 +17,8 @@ const countOutput = document.querySelector(".count-output");
 const quantityCount = document.querySelector(".qunatity-count");
 const totalCost = document.querySelector(".total-cost");
 
+const deleteBtn = document.querySelector(".delete-btn");
+
 let count = 0;
 let outputCount = 0;
 let unitPrice = 125;
@@ -28,7 +30,21 @@ function updateCartInformation() {
   const total = unitPrice * quantity;
   totalCost.innerHTML = `$${total.toFixed(2)}`;
 }
+
 updateCartInformation();
+
+deleteBtn.addEventListener("click", () => {
+  count = 0;
+  outputCount = 0;
+
+  countOutput.textContent = outputCount;
+  quantityCount.textContent = count;
+
+  cartContainer.setAttribute("data-count", "0");
+
+  cartEmpty.style.display = "";
+  cartFilled.style.display = "none";
+});
 
 avatar.addEventListener("click", () => {
   if (cartDropdown.style.display === "none") {

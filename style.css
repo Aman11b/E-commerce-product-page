@@ -225,6 +225,7 @@ li > a {
 .delete-btn {
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 .Checkout {
   margin: 0 1rem;
