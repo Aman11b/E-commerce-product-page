@@ -2,15 +2,33 @@ const addToCart = document.querySelector(".add-to-cart");
 const cartContainer = document.querySelector(".cart-container");
 
 const decreaseBtn = document.querySelector(".decrease-btn");
-const countOutput = document.querySelector(".count-output");
+
 const increaseCount = document.querySelector(".increase-btn");
 
 const avatar = document.querySelector(".avatar");
 const cartDropdown = document.getElementById("cart-dropdown");
 
 const dataCount = parseInt(cartContainer.getAttribute("data-count"));
+
 const cartEmpty = document.querySelector(".cart-empty");
 const cartFilled = document.querySelector(".cart-filled");
+
+const countOutput = document.querySelector(".count-output");
+const quantityCount = document.querySelector(".qunatity-count");
+const totalCost = document.querySelector(".total-cost");
+
+let count = 0;
+let outputCount = 0;
+let unitPrice = 125;
+
+function updateCartInformation() {
+  quantityCount.innerHTML = countOutput.innerHTML;
+
+  const quantity = parseInt(countOutput.innerHTML) || 0;
+  const total = unitPrice * quantity;
+  totalCost.innerHTML = `$${total.toFixed(2)}`;
+}
+updateCartInformation();
 
 avatar.addEventListener("click", () => {
   if (cartDropdown.style.display === "none") {
@@ -28,10 +46,6 @@ avatar.addEventListener("click", () => {
   }
 });
 
-let count = 0;
-
-let outputCount = 0;
-
 addToCart.addEventListener("click", () => {
   count++;
   cartContainer.setAttribute("data-count", count);
@@ -39,12 +53,15 @@ addToCart.addEventListener("click", () => {
 
 increaseCount.addEventListener("click", () => {
   outputCount++;
+
   countOutput.textContent = outputCount;
+  updateCartInformation();
 });
 
 decreaseBtn.addEventListener("click", () => {
   if (outputCount > 0) {
     outputCount--;
     countOutput.textContent = outputCount;
+    updateCartInformation();
   }
 });
