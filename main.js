@@ -8,14 +8,25 @@ const increaseCount = document.querySelector(".increase-btn");
 const avatar = document.querySelector(".avatar");
 const cartDropdown = document.getElementById("cart-dropdown");
 
-avatar.addEventListener("click",()=>{
-  if(cartDropdown.style.display === "none"){
-    cartDropdown.style.display="";
-  }else{
-    cartDropdown.style.display="none";
-  }
-})
+const dataCount = parseInt(cartContainer.getAttribute("data-count"));
+const cartEmpty = document.querySelector(".cart-empty");
+const cartFilled = document.querySelector(".cart-filled");
 
+avatar.addEventListener("click", () => {
+  if (cartDropdown.style.display === "none") {
+    cartDropdown.style.display = "";
+
+    if (count === 0) {
+      cartEmpty.style.display = "";
+      cartFilled.style.display = "none";
+    } else {
+      cartEmpty.style.display = "none";
+      cartFilled.style.display = "";
+    }
+  } else {
+    cartDropdown.style.display = "none";
+  }
+});
 
 let count = 0;
 
