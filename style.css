@@ -295,7 +295,7 @@ li > a {
 .product-information {
   flex-direction: column;
   gap: 1.4rem;
-  
+
   width: 50ch;
 
   justify-content: center;
@@ -403,6 +403,74 @@ li > a {
   border-radius: 10px;
 
   cursor: pointer;
+}
+
+.lightbox-main {
+}
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+
+  z-index: 100;
+}
+
+.lightbox.hidden {
+  display: none;
+}
+
+.lightbox-main {
+}
+
+.light-box-image {
+  width: 420px;
+  aspect-ratio: 1;
+  border-radius: 1rem;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 8rem;
+  right: 18rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 45%;
+  background-color: var(--clr-White);
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+.lightbox-prev {
+  left: 16rem;
+}
+
+.lightbox-next {
+  right: 16rem;
+}
+.lightbox-thumbnails-gallery {
+  gap: 1rem;
+}
+
+.lightbox-thumbnails-gallery > img {
+  aspect-ratio: 1;
+  width: 90px;
+  border-radius: 1rem;
 }
 
 @media screen and (max-width: 375px) {
