@@ -23,6 +23,52 @@ const mainImage = document.querySelector(".main-image");
 const thumbnailGalleryBtn = document.querySelectorAll(
   ".thumbnails-gallery-btn"
 );
+
+const lightbox = document.querySelector(".lightbox");
+const lightboxMainImage = document.querySelector(".light-box-image");
+const lightboxCloseBtn = document.querySelector(".lightbox-close");
+const lightboxPrevBtn = document.querySelector(".lightbox-prev");
+const lightboxNextBtn = document.querySelector(".lightbox-next");
+const lightboxThumbnailsGallery = document.querySelectorAll(
+  ".lightbox-thumbnails-gallery img"
+);
+
+mainImage.addEventListener("click", () => {
+  openLightBox(0);
+});
+
+let currentIndex = 0;
+function openLightBox(index) {
+  currentIndex = index;
+  const fullSrc = lightboxThumbnailsGallery[currentIndex].src.replace(
+    "-thumbnail",
+    ""
+  );
+  lightboxMainImage.src = fullSrc;
+  lightbox.classList.remove("hidden");
+}
+function updateImage(step) {
+  currentIndex =
+    (currentIndex + step + lightboxThumbnailsGallery.length) %
+    lightboxThumbnailsGallery.length;
+  lightboxMainImage.src = lightboxThumbnailsGallery[currentIndex].src.replace(
+    "-thumbnail",
+    ""
+  );
+}
+
+function closeLightbox() {
+  lightbox.classList.add("hidden");
+}
+
+lightboxCloseBtn.addEventListener("click", () => closeLightbox());
+lightboxThumbnailsGallery.forEach((thumb, index) => {
+  thumb.addEventListener("click", () => openLightBox(index));
+});
+
+lightboxPrevBtn.addEventListener("click", () => updateImage(-1));
+lightboxNextBtn.addEventListener("click", () => updateImage(1));
+
 thumbnailGalleryBtn.forEach((button) => {
   const thumbnail = button.querySelector("img");
   button.addEventListener("click", () => {

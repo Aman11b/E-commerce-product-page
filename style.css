@@ -405,8 +405,6 @@ li > a {
   cursor: pointer;
 }
 
-.lightbox-main {
-}
 .lightbox {
   position: fixed;
   top: 0;
@@ -425,9 +423,6 @@ li > a {
 
 .lightbox.hidden {
   display: none;
-}
-
-.lightbox-main {
 }
 
 .light-box-image {
