@@ -252,14 +252,15 @@ li > a {
   aspect-ratio: 1;
   border-radius: 1rem;
   cursor: pointer;
-  height: 460px;
+  height: 400px;
 }
 
 .thumbnails-gallery {
   gap: 1rem;
 }
 
-.thumbnails-gallery > button {
+.thumbnails-gallery > button,
+.lightbox-thumbnails-gallery > button {
   position: relative;
   border: none;
   cursor: pointer;
@@ -267,14 +268,25 @@ li > a {
   background: transparent;
   transition: opacity 0.3s ease;
 }
-
 .thumbnails-gallery > button > img {
+  aspect-ratio: 1;
+  width: 100px;
+}
+.lightbox-thumbnails-gallery > button > img {
+  aspect-ratio: 1;
+  width: 90px;
+}
+
+.thumbnails-gallery > button > img,
+.lightbox-thumbnails-gallery > button > img {
   border-radius: 1rem;
 }
-.thumbnails-gallery > button > img:hover {
-  border: 3px solid var(--clr-Orange);
+.thumbnails-gallery > button > img:hover,
+.lightbox-thumbnails-gallery > button > img:hover {
+  border: 2px solid var(--clr-Orange);
 }
-.thumbnails-gallery > button::before {
+.thumbnails-gallery > button::before,
+.lightbox-thumbnails-gallery > button::before {
   top: 0;
   left: 0;
   z-index: 1;
@@ -288,7 +300,8 @@ li > a {
   transition: opacity 0.3s ease;
   background-color: var(--clr-overlay);
 }
-.thumbnails-gallery > button:hover::before {
+.thumbnails-gallery > button:hover::before,
+.lightbox-thumbnails-gallery > button:hover::before {
   opacity: 1;
 }
 
@@ -404,6 +417,9 @@ li > a {
 
   cursor: pointer;
 }
+.lightbox.hidden {
+  display: none;
+}
 
 .lightbox {
   position: fixed;
@@ -445,12 +461,21 @@ li > a {
   position: absolute;
   top: 45%;
   background-color: var(--clr-White);
-  border: none;
   border-radius: 50%;
+  border: none;
   padding: 10px;
   cursor: pointer;
   transform: translateY(-50%);
 }
+
+.lightbox-next > svg,
+.lightbox-prev > svg {
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .lightbox-prev {
   left: 16rem;
 }
@@ -461,11 +486,14 @@ li > a {
 .lightbox-thumbnails-gallery {
   gap: 1rem;
 }
-
 .lightbox-thumbnails-gallery > img {
   aspect-ratio: 1;
   width: 90px;
   border-radius: 1rem;
+  cursor: pointer;
+}
+ {
+  border: 2px solid var(--clr-Orange);
 }
 
 @media screen and (max-width: 375px) {
