@@ -23,7 +23,7 @@
     <title>Frontend Mentor | E-commerce product page</title>
   </head>
   <body class="flex">
-    <header class="flex">
+    <header class="flex | primary-header">
       <div class="nav-div flex">
         <svg
           width="138"
@@ -37,8 +37,18 @@
             fill-rule="nonzero"
           />
         </svg>
+
+        <button aria-controls="primary-navigation"
+        aria-expanded="false"
+        class="mobile-nav-toggle"
+        type="button">
+          <span class="sr-only">MENU</span>
+        </button>
+
         <nav class="nav-menu">
-          <ul class="flex primary-navigation" id="primary-navigation">
+          <ul class="flex primary-navigation" 
+          id="primary-navigation"
+          data-visible="false">
             <li><a href="#Collections">Collections</a></li>
             <li><a href="#Men">Men</a></li>
             <li><a href="#Women">Women</a></li>

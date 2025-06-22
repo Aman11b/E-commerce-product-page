@@ -89,16 +89,6 @@ ol[role="list"] {
   list-style: none;
 }
 
-.sr-only {
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
 :root {
   --clr-Orange: hsl(26, 100%, 55%);
   --clr-Pale-orange: hsl(25, 100%, 94%);
@@ -128,6 +118,8 @@ body {
   gap: 4rem;
   justify-content: space-around;
   align-items: center;
+  overflow-x: hidden;
+  padding: 0;
 }
 
 header {
@@ -157,6 +149,20 @@ li > a {
 }
 .primary-navigation > li > a:hover {
   border-bottom: 4px solid var(--clr-Orange);
+}
+
+.sr-only{
+  clip-path:inset(100%);
+  clip:rect(0 0 0 0 );
+  height:1px;
+  overflow:hidden;
+  position: absolute;
+  white-space:nowrap;
+  width:1px
+}
+
+.mobile-nav-toggle{
+  display: none;
 }
 .header-buttons {
   align-items: center;
@@ -510,7 +516,70 @@ li > a {
   }
 }
 
-@media screen and (max-width: 375px) {
+body::before{
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-color: hsla(0, 0%, 20%, 0.75);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease;
+  z-index: 800;
+}
+body.overlay-active::before{
+  opacity: 1;
+  pointer-events: none;
+}
+body.overlay-active{
+  overflow: hidden;
+}
+
+@media screen and (max-width: 35em) {
+  /* primary navigation */
+  .primary-navigation{
+    gap: 2rem;
+    position: fixed;
+    z-index: 1000;
+    inset: 0 30% 0 0;
+    background-color: var(--clr-White);
+    color: var(--clr-Dark-grayish-blue);
+
+    flex-direction: column;
+    padding: min(20vh,10rem) 2rem;
+    margin: 0;
+
+    transform: translateX(150%);
+    transition: transfrom 450ms ease-out;
+  }
+
+  .primary-navigation[data-visible="true"]{
+    transform: translateX(0%);
+  }
+
+  .mobile-nav-toggle{
+    display: block;
+    position: absolute;
+    background-image: url("./images/icon-menu.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    width: 3rem;
+    aspect-ratio: 1;
+    top: 2rem;
+    left: 2rem;
+    z-index: 9999;
+
+    border: none;
+    outline: none;
+  }
+
+  .mobile-nav-toggle[aria-expanded="true"]
+  {
+    background-image: url("./images/icon-close.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+  }
 
 }
 
