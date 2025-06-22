@@ -325,7 +325,9 @@ li > a {
 
   justify-content: center;
 }
-
+.price-div{
+  flex-direction: column;
+}
 .product-title {
   font-size: 2.56rem;
   padding-bottom: 1rem;
@@ -538,6 +540,7 @@ body.overlay-active{
 @media screen and (max-width: 35em) {
   body{
     padding: 0;
+    gap: 0;
   }
 
   header{
@@ -553,6 +556,10 @@ body.overlay-active{
     gap: 1rem;
   }
 
+  .primary-navigation > li > a:hover {
+    border-bottom:none;
+  }
+
   .header-buttons {
     gap: 1rem;
     padding-left: 2rem;
@@ -561,21 +568,70 @@ body.overlay-active{
     width: 35px;
   }
 
+  .cart-dropdown {
+    position: absolute;
+    top: 6rem;
+    right: 1rem;
+    background-color: var(--clr-White);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    height: 260px;
+    width: 90%;
+  }
   .product {
     flex-direction: column;
-    justify-content: space-between;
+    gap: 1rem;
+    padding: 0;
+  }
+  .product-gallery,
+  .product-information{
+    max-width: 100%;
+  }
+  .main-image {
+    height: auto;
+    border-radius: 0;
+  }
+  .thumbnails-gallery {
+    display: none;
+  }
+
+  .product-information {
+    flex-direction: column;
+    gap: 0.6rem;
+    width: fit-content;
+    justify-content: center;
+    padding: 0 2rem;
+  }
+
+  .product-title {
+    font-size: 2rem;
+    padding-bottom: 0;
+  }
+  .price-div{
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+  }
+  .buttons {
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 0;
+  }
+
+  .buttons > *{
     width: 100%;
   }
 
-  
-.main-image {
-  aspect-ratio: 1;
-  cursor: pointer;
-  width: 100%;
-}
+  .add-to-cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding-bottom: 2rem; */
+  }
 
-
+  footer{
+    padding: 1rem 0;
+  }
 
   /* primary navigation */
   .primary-navigation{
@@ -597,7 +653,6 @@ body.overlay-active{
   .primary-navigation[data-visible="true"]{
     transform: translateX(0%);
   }
-
 
   .mobile-nav-toggle{
     display: flex;
