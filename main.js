@@ -33,6 +33,9 @@ const lightboxThumbnailsGallery = document.querySelectorAll(
   ".lightbox-thumbnails-gallery img"
 );
 
+const mobilePrev = document.querySelector(".mobile-prev");
+const mobileNext = document.querySelector(".mobile-next");
+
 const primaryNav = document.querySelector(".primary-navigation");
 const navToggle = document.querySelector(".mobile-nav-toggle");
 
@@ -75,6 +78,22 @@ function updateImage(step) {
     "-thumbnail",
     ""
   );
+}
+
+function updateMobileMainImage(step) {
+  currentIndex =
+    (currentIndex + step + lightboxThumbnailsGallery.length) %
+    lightboxThumbnailsGallery.length;
+    const newSrc = lightboxMainImage.src = lightboxThumbnailsGallery[currentIndex].src.replace(
+    "-thumbnail",
+    ""
+  );
+  mainImage.src=newSrc;
+}
+
+if(window.innerWidth<=560){
+  mobilePrev.addEventListener("click",()=>updateMobileMainImage(-1));
+  mobileNext.addEventListener("click", () => updateMobileMainImage(+1));
 }
 
 function closeLightbox() {

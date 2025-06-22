@@ -573,12 +573,13 @@ body.overlay-active{
   .cart-dropdown {
     position: absolute;
     top: 6rem;
-    right: 1rem;
+    right: 0.4rem;
     background-color: var(--clr-White);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     border-radius: 1rem;
     height: 260px;
-    width: 90%;
+    width: 95%;
+    z-index: 700;
   }
   .product {
     flex-direction: column;
@@ -605,13 +606,17 @@ body.overlay-active{
   .mobile-next {
     position: absolute;
     top: 30%;
-    background-color: var(--clr-White);
+    background-color: var(--clr-overlay);
     border-radius: 50%;
     border: none;
     padding: 15px;
     cursor: pointer;
     transform: translateY(-50%);
     aspect-ratio: 1;
+  }
+  .mobile-prev:hover,
+  .mobile-next:hover{
+    background-color: var(--clr-White);
   }
 
   .mobile-next > svg,
