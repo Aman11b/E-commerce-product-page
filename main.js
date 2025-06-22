@@ -118,7 +118,7 @@ thumbnailGalleryBtn.forEach((button) => {
 
 let count = 0;
 let outputCount = 0;
-let unitPrice = 125;
+const unitPrice = 125;
 
 function updateCartInformation() {
   quantityCount.innerHTML = countOutput.innerHTML;

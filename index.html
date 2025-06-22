@@ -41,7 +41,8 @@
         <button aria-controls="primary-navigation"
         aria-expanded="false"
         class="mobile-nav-toggle"
-        type="button">
+        type="button"
+        aria-label="toggle mobile navigation">
           <span class="sr-only">MENU</span>
         </button>
 
@@ -68,7 +69,7 @@
           </svg>
         </div>
         <div class="avatar-div">
-          <img src="./images/image-avatar.png" class="avatar" />
+          <img src="./images/image-avatar.png" class="avatar" alt="user avatar"/>
           <div class="cart-dropdown" id="cart-dropdown" style="display: none">
             <div class="cart-empty flex" style="display: none">
               <h2 class="cart-header">cart</h2>
@@ -90,7 +91,8 @@
                   x <span class="qunatity-count"> </span>
                   <span class="total-cost"> </span>
                 </div>
-                <button class="delete-btn">
+                <button class="delete-btn"
+                type="button" aria-label="Delete item">
                   <svg
                     width="16"
                     height="18"
@@ -107,7 +109,7 @@
                   </svg>
                 </button>
               </div>
-              <button class="Checkout">Checkout</button>
+              <button class="Checkout" type="button" aria-label="Checkout button">Checkout</button>
             </div>
           </div>
         </div>
@@ -123,7 +125,7 @@
               alt="image-product-1"
               class="main-image"
             />
-            <button class="mobile-prev hidden">
+            <button class="mobile-prev hidden" type="button" aria-label="mobile previous image button">
               <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M11 1 3 9l8 8"
@@ -134,7 +136,8 @@
                 />
               </svg>
             </button>
-            <button class="mobile-next hidden">
+            <button class="mobile-next hidden"
+            type="button" aria-label="mobile next image button">
               <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="m2 1 8 8-8 8"
@@ -148,25 +151,25 @@
             
             <!-- <figcaption>Click on thumbnails to Zoom</figcaption> -->
             <div class="thumbnails-gallery flex">
-              <button class="thumbnails-gallery-btn">
+              <button class="thumbnails-gallery-btn" type="button" aria-label="thumbnail image button">
                 <img
                   src="./images/image-product-1-thumbnail.jpg"
                   alt="thumbnail 1"
                 />
               </button>
-              <button class="thumbnails-gallery-btn">
+              <button class="thumbnails-gallery-btn" type="button" aria-label="thumbnail image button">
                 <img
                   src="./images/image-product-2-thumbnail.jpg"
                   alt="thumbnail 2"
                 />
               </button>
-              <button class="thumbnails-gallery-btn">
+              <button class="thumbnails-gallery-btn" type="button" aria-label="thumbnail image button">
                 <img
                   src="./images/image-product-3-thumbnail.jpg"
                   alt="thumbnail 3"
                 />
               </button>
-              <button class="thumbnails-gallery-btn">
+              <button class="thumbnails-gallery-btn" type="button" aria-label="thumbnail image button">
                 <img
                   src="./images/image-product-4-thumbnail.jpg"
                   alt="thumbnail 4"
@@ -192,7 +195,8 @@
           </div>
           <div class="buttons flex">
             <div class="count-button flex">
-              <button class="decrease-btn">
+              <button class="decrease-btn"
+              type="button" aria-label="Decrease quantity" >
                 <svg
                   width="12"
                   height="4"
@@ -210,7 +214,8 @@
                 </svg>
               </button>
               <span class="count-output">0</span>
-              <button class="increase-btn">
+              <button class="increase-btn"
+              type="button" aria-label="Increase quantity">
                 <svg
                   width="12"
                   height="12"
@@ -227,7 +232,8 @@
                 </svg>
               </button>
             </div>
-            <button class="add-to-cart flex">
+            <button class="add-to-cart flex"
+            type="button" aria-label="add to cart button">
               <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
@@ -242,7 +248,7 @@
     </main>
     <div class="lightbox flex hidden">
       <div class="lightbox-main">
-        <button class="lightbox-close">
+        <button class="lightbox-close" type="button" aria-label="light close button">
           <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
             <path
               d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
@@ -251,7 +257,8 @@
           </svg>
           </button>
           <img src="./images/image-product-1.jpg" alt="expanded Image" class="light-box-image" />
-          <button class="lightbox-prev">
+          <button class="lightbox-prev"
+          type="button" aria-label="light previous image button">
             <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M11 1 3 9l8 8"
@@ -262,7 +269,8 @@
               />
             </svg>
           </button>
-          <button class="lightbox-next">
+          <button class="lightbox-next"
+          type="button" aria-label="light next image button">
             <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="m2 1 8 8-8 8"
@@ -276,25 +284,25 @@
         </sapn>
       </div>
       <div class="lightbox-thumbnails-gallery flex">
-        <button class="thumbnails-gallery-btn">
+        <button class="thumbnails-gallery-btn"  type="button" aria-label="lightbox image gallery button">
           <img
             src="./images/image-product-1-thumbnail.jpg"
             alt="thumbnail 1"
           />
         </button>
-        <button class="thumbnails-gallery-btn">
+        <button class="thumbnails-gallery-btn" type="button" aria-label="lightbox image gallery button">
           <img
             src="./images/image-product-2-thumbnail.jpg"
             alt="thumbnail 2"
           />
         </button>
-        <button class="thumbnails-gallery-btn">
+        <button class="thumbnails-gallery-btn" type="button" aria-label="lightbox image gallery button">
           <img
             src="./images/image-product-3-thumbnail.jpg"
             alt="thumbnail 3"
           />
         </button>
-        <button class="thumbnails-gallery-btn">
+        <button class="thumbnails-gallery-btn" type="button" aria-label="lightbox image gallery button">
           <img
             src="./images/image-product-4-thumbnail.jpg"
             alt="thumbnail 4"
