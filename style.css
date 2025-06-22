@@ -496,13 +496,15 @@ li > a {
     align-items: center;
   }
 
-  .lightbox-prev {
-    left: 30.5rem;
-  }
+
   .lightbox-prev:hover svg path,
   .lightbox-next:hover svg path
   {
     stroke: var(--clr-Orange);
+  }
+
+  .lightbox-prev {
+    left: 30.5rem;
   }
 
   .lightbox-next {
@@ -590,6 +592,49 @@ body.overlay-active{
   .main-image {
     height: auto;
     border-radius: 0;
+    position: relative;
+  }
+
+  .mobile-prev,
+  .mobile-next{
+    display: block;
+    position: absolute;
+  }
+
+  .mobile-prev,
+  .mobile-next {
+    position: absolute;
+    top: 30%;
+    background-color: var(--clr-White);
+    border-radius: 50%;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    transform: translateY(-50%);
+    aspect-ratio: 1;
+  }
+
+  .mobile-next > svg,
+  .mobile-prev > svg {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .mobile-prev:hover svg path,
+  .mobile-next:hover svg path
+  {
+    stroke: var(--clr-Orange);
+  }
+  
+  .mobile-prev {
+    left: 1rem;
+  }
+
+  .mobile-next {
+    right: 1rem;
   }
   .thumbnails-gallery {
     display: none;
