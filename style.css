@@ -720,7 +720,7 @@ body.overlay-active{
     aspect-ratio: 1;
     top: 1rem;
     left: 0.5rem;
-    z-index: 9999;
+    z-index: 99999;
 
     border: none;
     outline: none;
