@@ -579,11 +579,8 @@ body.overlay-active{
   }
 
   .cart-dropdown {
-    position: absolute;
     top: 6rem;
     right: 0.4rem;
-    background-color: var(--clr-White);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     border-radius: 1rem;
     height: 235px;
     width: 95%;
@@ -693,7 +690,7 @@ body.overlay-active{
 
   /* primary navigation */
   .primary-navigation{
-    gap: 2rem;
+    gap: 3rem;
     position: fixed;
     z-index: 1000;
     inset: 0 30% 0 0;
@@ -728,6 +725,21 @@ body.overlay-active{
     border: none;
     outline: none;
 
+  }
+  
+
+  li > a {
+    text-decoration: none;
+    padding-bottom: 0rem;
+  }
+
+  li > a:hover{
+    color: var(--clr-Orange);
+  }
+
+  li:hover{
+    border-bottom: 3px solid var(--clr-Pale-orange);
+    width: fit-content;
   }
 
   .mobile-nav-toggle[aria-expanded="true"]
