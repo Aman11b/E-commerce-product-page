@@ -5,7 +5,7 @@ const decreaseBtn = document.querySelector(".decrease-btn");
 
 const increaseCount = document.querySelector(".increase-btn");
 
-const avatar = document.querySelector(".avatar");
+const cartBtn = document.querySelector(".cartBtn");
 const cartDropdown = document.getElementById("cart-dropdown");
 
 const dataCount = parseInt(cartContainer.getAttribute("data-count"));
@@ -39,22 +39,20 @@ const mobileNext = document.querySelector(".mobile-next");
 const primaryNav = document.querySelector(".primary-navigation");
 const navToggle = document.querySelector(".mobile-nav-toggle");
 
-navToggle.addEventListener("click",()=>{
+navToggle.addEventListener("click", () => {
   const visibility = primaryNav.getAttribute("data-visible");
-  if(visibility === 'false'){
-    primaryNav.setAttribute("data-visible",true);
-    navToggle.setAttribute("aria-expanded",true);
+  if (visibility === "false") {
+    primaryNav.setAttribute("data-visible", true);
+    navToggle.setAttribute("aria-expanded", true);
 
     document.body.classList.add("overlay-active");
-  }
-  else if(visibility === 'true'){
+  } else if (visibility === "true") {
     primaryNav.setAttribute("data-visible", false);
     navToggle.setAttribute("aria-expanded", false);
 
     document.body.classList.remove("overlay-active");
-
   }
-})
+});
 
 mainImage.addEventListener("click", () => {
   openLightBox(0);
@@ -84,15 +82,14 @@ function updateMobileMainImage(step) {
   currentIndex =
     (currentIndex + step + lightboxThumbnailsGallery.length) %
     lightboxThumbnailsGallery.length;
-    const newSrc = lightboxMainImage.src = lightboxThumbnailsGallery[currentIndex].src.replace(
-    "-thumbnail",
-    ""
-  );
-  mainImage.src=newSrc;
+  const newSrc = (lightboxMainImage.src = lightboxThumbnailsGallery[
+    currentIndex
+  ].src.replace("-thumbnail", ""));
+  mainImage.src = newSrc;
 }
 
-if(window.innerWidth<=560){
-  mobilePrev.addEventListener("click",()=>updateMobileMainImage(-1));
+if (window.innerWidth <= 560) {
+  mobilePrev.addEventListener("click", () => updateMobileMainImage(-1));
   mobileNext.addEventListener("click", () => updateMobileMainImage(+1));
 }
 
@@ -143,7 +140,7 @@ deleteBtn.addEventListener("click", () => {
   cartFilled.style.display = "none";
 });
 
-avatar.addEventListener("click", () => {
+cartBtn.addEventListener("click", () => {
   if (cartDropdown.style.display === "none") {
     cartDropdown.style.display = "";
 
